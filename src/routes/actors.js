@@ -1,9 +1,32 @@
+/************ Requirements *************/
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('actors', { title: 'Todos los actores' });
-});
+/********* Own Requirements ***********/
+const actorsController = require('../controllers/actorsController')
+
+/*** GET ALL ACTORS ***/ 
+router.get('/', actorsController.all);
+
+/*** GET ONE ACTORS ***/
+router.get('/detail/:id', actorsController.detail);
+
+/*** CREATE NEW ACTORS ***/ 
+router.get('/new', actorsController.new);
+router.post('/create', actorsController.create)
+
+/*** EDIT ACTORS ***/ 
+router.get('/edit/:idMovie', actorsController.edit); 
+router.post('/edit/:idMovie', actorsController.update); 
+
+/*** DELETE ACTORS ***/ 
+router.get('/delete/:idMovie', actorsController.destroy)
+
+/*** RECOMmENDED  ***/ 
+router.get('/recommended', actorsController.recommended);
+
+/*** SEARCH ***/ 
+router.post('search-form/:idProduct', actorsController.search);
+
 
 module.exports = router;
