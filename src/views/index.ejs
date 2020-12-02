@@ -3,26 +3,35 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href='/stylesheets/styleheader.css'>
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    <section class="wrapper">
-      <a href="movies">
-        <article class="category">
-          Peliculas
-        </article>
-      </a>
-      <a href="actors">
-        <article class="category">
-          Actores
-        </article>
-      </a>
-      <a href="gender">
-        <article class="category">
-          Generos
-        </article>
-      </a>
+    <!-- start header -->
+      <%- include('partials/header'); %> 
+    <!-- end header -->
+    <section class="contenido">
+      <h1><%= title %></h1>
+      <!-- start header -->
+        <%- include('partials/search'); %> 
+      <!-- end header -->
+      <p>Welcome to <%= title %></p>
+      <section class="grid-container">
+        <a href="movies">
+          <article class="grid-waper">
+            Peliculas
+          </article>
+        </a>
+        <a href="actors">
+          <article class="grid-waper">
+            Actores
+          </article>
+        </a>
+        <a href="genres">
+          <article class="grid-waper">
+            Generos
+          </article>
+        </a>
+      </section>
     </section>
-  </body>
+    </body>
 </html>

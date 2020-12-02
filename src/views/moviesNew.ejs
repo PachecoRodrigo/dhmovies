@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Peliculas</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href='/stylesheets/styleheader.css'>
+  </head>
+  <body>
+    <!-- start header -->
+      <%- include('partials/header'); %> 
+    <!-- end header -->
+    <h1>Estrenos</h1>
+    <section class="grid-container">
+      <% movies.forEach(movie => { %>
+        <article class="grid-waper">
+            <img src="<%= movie.img %>" onerror="if (this.src != 'undefine.jpg') this.src = '/images/undefine.jpg';"  class="img" alt="image">
+            <a href="/movies/detail/<%=movie.id%>" class= "ali">
+              <%= movie.title%> <p style= "font-weight: bold;"><%= " Estreno " + movie.release_date%></p>
+            </a>      
+        </article>
+      <% }); %>
+    </section>
+</body>
+</html>

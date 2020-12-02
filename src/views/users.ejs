@@ -3,8 +3,12 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href='/stylesheets/styleheader.css'>
   </head>
   <body>
+    <!-- start header -->
+      <%- include('partials/header'); %> 
+    <!-- end header -->
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
   </body>

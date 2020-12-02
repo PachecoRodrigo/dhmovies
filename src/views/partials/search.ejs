@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/movies/search" method="POST" class="search">
+        <input  class= "search-input" type="text" name="pelicula" placeholder="Buscar peliculas" >
+        
+        <select name="Orden" id="orden" onchange="getSelectValue();">
+            <option selected value="title"> Ordenar por </option>
+                <option value="release_date" >Estreno</option> 
+                <option value="rating" >Rating</option> 
+                <option value="awards">Premios</option> 
+                <option value="length">Duración</option> 
+        </select>                         
+        <button type="submit" ><i>ENVIAR</i></button>
+</body>
+</html>

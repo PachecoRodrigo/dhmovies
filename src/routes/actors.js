@@ -11,22 +11,21 @@ router.get('/', actorsController.all);
 /*** GET ONE ACTORS ***/
 router.get('/detail/:id', actorsController.detail);
 
-/*** CREATE NEW ACTORS ***/ 
+/*** CREATE NEW ACTORS ***/
 router.get('/new', actorsController.new);
-router.post('/create', actorsController.create)
+router.post('/create', actorsController.create);
 
 /*** EDIT ACTORS ***/ 
-router.get('/edit/:idMovie', actorsController.edit); 
-router.post('/edit/:idMovie', actorsController.update); 
+router.get('/edit/:idMovie', actorsController.edit);
+router.post('/edit/:idMovie', actorsController.update);
 
 /*** DELETE ACTORS ***/ 
 router.get('/delete/:idMovie', actorsController.destroy)
 
-/*** RECOMmENDED  ***/ 
+/*** RECOMMENDED  ***/ 
 router.get('/recommended', actorsController.recommended);
 
 /*** SEARCH ***/ 
 router.post('search-form/:idProduct', actorsController.search);
-
 
 module.exports = router;
