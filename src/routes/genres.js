@@ -1,9 +1,15 @@
+/************ Requirements *************/
 var express = require('express');
 var router = express.Router();
+var path = require('path');
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('genres', { title: 'Todos los generos' });
-});
+/********* Own Requirements ***********/
+// var genresController = require(path.join(__dirname, '..', 'controllers', 'genresController'));
+var genresController = require('../controllers/genresController')
+/*** GET ALL GENRES ***/ 
+router.get('/', genresController.all);
+
+/*** GET ONE GENRE ***/
+router.get('/detail/:idGenre', genresController.detail);
 
 module.exports = router;

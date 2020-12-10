@@ -1,80 +1,60 @@
 * {
-padding: 0;
-margin: 0;
-}
-p {
-margin-bottom: 20px;
+  padding: 0;
+  margin: 0;
 }
 .wrapper {
-width: 80%;
-margin: auto;
-overflow:hidden;
+  float: left; /* Desplazamos el nav hacia la izquierda */
 }
 header {
-background: rgba(0,0,0,0.9);
-width: 100%;
-position: fixed;
-z-index: 10;
+  background: rgba(0,0,0,0.9);
+  width: 100%;
+  position: fixed;
+  z-index: 10;    
 }
-
 nav {
-float: left; /* Desplazamos el nav hacia la izquierda */
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  margin: auto;
+  overflow:hidden;
 }
 nav ul {
-list-style: none;
-overflow: hidden; /* Limpiamos errores de float */
+  list-style: none;
+  overflow: hidden; /* Limpiamos errores de float */
 }
-nav ul li {
-float: left;
-font-family: Arial, sans-serif;
-font-size: 16px;
+  nav ul li {
+  float: left;
+  font-size: 16px;
 }
-nav ul li a {
-display: block; /* Convertimos los elementos a en elementos bloque para manipular el padding */
-padding: 20px;
-color: #fff;
-text-decoration: none;
+  nav ul li a {
+  display: block;
+  padding: 10px;
+  color: #fff;
+  text-decoration: none;
 }
-nav ul li:hover {
-background: #3ead47;
+  nav ul li:hover {
+  background: #3ead47;
+  /* font-weight: bold; */
+}
+.search-input {
+  width: 350px;
+  height: 30px;
+}
+.search {
+  padding-bottom: 15px;
+}
+select#orden {
+  width: 150px;
+  height: 34px;
+}
+button {
+  height: 34px;
+  margin-inline: 2px;
 }
 .contenido {
-padding-top: 80px;
+  padding-top: 50px;
 }
-
-
-/* .header {
-    padding: 0px;
-    margin: 0px;
-    background: rgba(0,0,0,0.9);
-    width: 100%;
-    position: fixed;
-    z-index: 100;
+@media (max-width:867px){
+  .contenido{
+    padding-top:80px;}
 }
-
-.main-header{
-    background-color: blue;
-}
-.nav-bar{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-left: 10%;
-    margin-right: 10%;
-    background-color: brown;
-}
-.nav-button{
-    background-color: burlywood;
-    margin-inline: 5px 5px;
-    padding: 5px;
-    border-radius: 5px;
-}
-.search{
-    background-color: cadetblue;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-.search-input{
-    width: 20%;
-} */

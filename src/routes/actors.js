@@ -1,31 +1,36 @@
 /************ Requirements *************/
 var express = require('express');
 var router = express.Router();
+var path = require('path');
 
 /********* Own Requirements ***********/
-const actorsController = require('../controllers/actorsController')
+const actorsController = require(path.join(__dirname, '..','controllers','actorsController'));
 
-/*** GET ALL ACTORS ***/ 
+/*** GET ALL ACTORS */ 
 router.get('/', actorsController.all);
 
-/*** GET ONE ACTORS ***/
-router.get('/detail/:id', actorsController.detail);
+/*** GET ONE ACTORS */
+router.get('/detail/:idActor', actorsController.detail);
 
-/*** CREATE NEW ACTORS ***/
+/*** CREATE NEW ACTORS */
 router.get('/new', actorsController.new);
 router.post('/create', actorsController.create);
 
-/*** EDIT ACTORS ***/ 
-router.get('/edit/:idMovie', actorsController.edit);
-router.post('/edit/:idMovie', actorsController.update);
+/*** SHOW ACTING */ 
+router.get('/acting', actorsController.acting)
+router.post('/acting', actorsController.store)
 
-/*** DELETE ACTORS ***/ 
-router.get('/delete/:idMovie', actorsController.destroy)
+/*** EDIT ACTORS */ 
+router.get('/edit/:idActor', actorsController.edit);
+router.post('/edit/:idActor', actorsController.update);
 
-/*** RECOMMENDED  ***/ 
-router.get('/recommended', actorsController.recommended);
+/*** DELETE ACTORS */ 
+router.get('/delete/:idActor', actorsController.destroy)
 
-/*** SEARCH ***/ 
+/*** RECOMMENDED  */ 
+router.get('/discover', actorsController.discover);
+
+/*** SEARCH */ 
 router.post('search-form/:idProduct', actorsController.search);
 
 module.exports = router;

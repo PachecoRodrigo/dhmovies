@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>Actores</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel="stylesheet" href='/stylesheets/styleheader.css'>
   </head>
@@ -9,14 +9,22 @@
     <!-- start header -->
       <%- include('partials/header'); %> 
     <!-- end header -->
-    <h1>Actores</h1>
-    <ul>
-      <% actors.forEach(actors => { %>
-        <li> <a href="/actors/detail/<%=actors.id%>" class= "ali">
-          <%= actors.first_name %> <%= actors.last_name %> 
-        </a>
-        </li>
-      <% }); %>
-    </ul>
+    <main class="contenido">
+      <h1>Actores</h1>
+      <!-- start search -->
+        <%- include('partials/search'); %> 
+      <!-- end search -->
+      <section class="flex-container">
+        <% actors.forEach(actors => { %>
+          <article class="grid-waper">
+            <img src="<%= actors.img %>" onerror="if (this.src != '  actorUndefine.jpg') this.src = '/images/actorUndefine.jpg';"  class="img" alt="image">
+            <a href="/actors/detail/<%=actors.id%>" class= "title">
+              <%= actors.first_name %>
+              <%= actors.last_name %> 
+            </a>
+          </article>
+        <% }) %>
+      </section>
+    </main>
   </body>
 </html>

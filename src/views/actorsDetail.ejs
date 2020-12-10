@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel="stylesheet" href='/stylesheets/styleheader.css'>
+</head>
+<body>
+  <!-- start header -->
+    <%- include('partials/header'); %>
+  <!-- end header -->
+  <main class="contenido">
+    <h1><%= oneActor.first_name %> <%= oneActor.last_name %> </h1>
+    <section class="detail-container">
+      <article class="image-wraper">
+        <img src="<%= oneActor.img %>" onerror="if (this.src != 'undefine.jpg') this.src = '/images/actorUndefine.jpg';"  class="img" alt="image">
+      </article>
+      <article  class= "detail-wraper">
+        <h4>Rating: </h4>
+        <p><%= oneActor.rating %> </p>
+        <h4>Peliculas: </h4>
+        <% oneActor.Movies.forEach(movie => { %>
+          <a href="/movies/detail/<%=movie.id%>" class= "boton">
+            <p> <%= movie.title %> </p>
+          </a>
+        <% }); %>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

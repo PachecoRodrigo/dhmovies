@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Peliculas</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link rel="stylesheet" href='/stylesheets/styleheader.css'>
-  </head>
-  <body>
-    <!-- start header -->
-      <%- include('partials/header'); %> 
-    <!-- end header -->
-    <section class="contenido">
-      <h1>Peliculas</h1>
-      <!-- start header -->
-        <%- include('partials/search'); %> 
-      <!-- end header -->
-      <section class="grid-container">
-        <% movies.forEach(movie => { %>
-          <article class="grid-waper">
-            <img src="<%= movie.img %>" onerror="if (this.src != 'undefine.jpg') this.src = '/images/undefine.jpg';"  class="img" alt="image">
-            <a href="movies/detail/<%= movie.id %>" class="title">
-              <%= movie.title %>
-            </a>
-          </article>       
-        <% }) %>
-      </section>
+<head>
+  <title>Peliculas</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel="stylesheet" href='/stylesheets/styleheader.css'>
+</head>
+<body>
+  <!-- start header -->
+    <%- include('partials/header'); %> 
+  <!-- end header -->
+  <main class="contenido">
+    <h1>Peliculas</h1>
+    <!-- start search -->
+      <%- include('partials/search'); %> 
+    <!-- end search -->
+    <section class="flex-container">
+      <% movies.forEach(movie => { %>
+        <article class="grid-waper">
+          <img src="<%= movie.img %>" onerror="if (this.src != 'undefine.jpg') this.src = '/images/undefine.jpg';"  class="img" alt="image">
+          <a href="movies/detail/<%= movie.id %>" class="title">
+            <%= movie.title %>
+          </a>
+        </article>
+      <% }) %>
     </section>
+  </main>
   </body>
 </html>

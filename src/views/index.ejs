@@ -1,37 +1,39 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link rel="stylesheet" href='/stylesheets/styleheader.css'>
-  </head>
-  <body>
-    <!-- start header -->
-      <%- include('partials/header'); %> 
-    <!-- end header -->
-    <section class="contenido">
-      <h1><%= title %></h1>
-      <!-- start header -->
-        <%- include('partials/search'); %> 
-      <!-- end header -->
-      <p>Welcome to <%= title %></p>
-      <section class="grid-container">
-        <a href="movies">
-          <article class="grid-waper">
+<head>
+  <title><%= title %></title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel="stylesheet" href='/stylesheets/styleheader.css'>
+</head>
+<body>
+  <!-- start header -->
+    <%- include('partials/header'); %> 
+  <!-- end header -->
+  <main class="contenido">
+    <h1><%= title %></h1>
+    <!-- start search -->
+      <%- include('partials/search'); %> 
+    <!-- end search -->
+    <section class="flex-container">
+      <article class="grid-waper">
+        <img src="movies.jpg" onerror="if (this.src != 'undefine.jpg') this.src='/images/undefine.jpg';"  class="img" alt="image">
+        <a href="movies" class="title">
             Peliculas
-          </article>
         </a>
-        <a href="actors">
-          <article class="grid-waper">
-            Actores
-          </article>
+      </article>
+      <article class="grid-waper">
+        <img src="movies.jpg" onerror="if (this.src != 'undefine.jpg') this.src='/images/undefine.jpg';"  class="img" alt="image">
+        <a href="actors" class="title">
+          Actores
         </a>
-        <a href="genres">
-          <article class="grid-waper">
-            Generos
-          </article>
+      </article>
+      <article class="grid-waper">
+        <img src="movies.jpg" onerror="if (this.src != 'undefine.jpg') this.src='/images/undefine.jpg';"  class="img" alt="image">
+        <a href="genres" class="title">
+          Generos
         </a>
-      </section>
+      </article>
     </section>
-    </body>
+  </main>
+</body>
 </html>

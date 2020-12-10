@@ -9,16 +9,21 @@
     <!-- start header -->
       <%- include('partials/header'); %> 
     <!-- end header -->
-    <h1>Estrenos</h1>
-    <section class="grid-container">
-      <% movies.forEach(movie => { %>
-        <article class="grid-waper">
-            <img src="<%= movie.img %>" onerror="if (this.src != 'undefine.jpg') this.src = '/images/undefine.jpg';"  class="img" alt="image">
-            <a href="/movies/detail/<%=movie.id%>" class= "ali">
-              <%= movie.title%> <p style= "font-weight: bold;"><%= " Estreno " + movie.release_date%></p>
-            </a>      
-        </article>
-      <% }); %>
-    </section>
+    <main class="contenido">
+      <h1>Estrenos</h1>
+      <!-- start search -->
+        <%- include('partials/search'); %> 
+      <!-- end search -->
+      <section class="flex-container">
+        <% movies.forEach(movie => { %>
+          <article class="grid-waper">
+              <img src="<%= movie.img %>" onerror="if (this.src != 'undefine.jpg') this.src = '/images/undefine.jpg';"  class="img" alt="image">
+              <a href="/movies/detail/<%=movie.id%>" class= "title">
+                <%= movie.title%> <p><%= " Estreno " + movie.release_date%></p>
+              </a>      
+          </article>
+        <% }); %>
+      </section>
+    </main>
 </body>
 </html>

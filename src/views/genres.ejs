@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>Generos</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel="stylesheet" href='/stylesheets/styleheader.css'>
   </head>
@@ -9,7 +9,21 @@
     <!-- start header -->
       <%- include('partials/header'); %> 
     <!-- end header -->
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <main class="contenido">
+      <h1>Generos</h1>
+      <!-- start search -->
+        <%- include('partials/search'); %> 
+      <!-- end search -->
+      <section class="flex-container">
+        <% genres.forEach(genres => { %>
+          <article class="grid-waper">
+            <img src="<%= genres.img %>" onerror="if (this.src != 'undefine.jpg') this.src = '/images/default.jpg';"  class="img" alt="image">
+            <a href="/genres/detail/<%=genres.id%>" class= "title">
+              <%= genres.name %>
+            </a>
+          </article>
+        <% }) %>
+      </section>
+    </main>
   </body>
 </html>
